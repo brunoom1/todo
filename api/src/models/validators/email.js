@@ -1,0 +1,1 @@
+module.exports = (email) => email.indexOf("@") !== -1

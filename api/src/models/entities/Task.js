@@ -3,9 +3,10 @@ class Task {
   constructor () {
     this.list = null;
     this.STATUS_OPEN = 'open';
-    this.STATUS_DOING = 'doing'
+    this.STATUS_DOING = 'doing';
+    this.status_DONE = 'done';
   }
-.
+
   setList(list) {}
   getList() {}
 
