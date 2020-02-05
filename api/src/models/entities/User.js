@@ -1,5 +1,6 @@
-const validate_name = require('./../validators/name.js');
-const validate_password = require('./../validators/password.js');
+const validate_name = require('models/validators/name.js');
+const validate_password = require('models/validators/password.js');
+const validate_email = require('models/validators/email.js');
 
 class User {
 
@@ -10,7 +11,6 @@ class User {
   }
 
   set name (name = "") {
-
     if (name.length === 0) {
       throw new Error("name is cant empty");
     }
@@ -24,12 +24,15 @@ class User {
   }
 
   set email (email) {
+    if (!validate_email(email)) {
+      throw new Error('malformed email');
+    }
+
     this._email = email;
     return this;
   }
 
   set password (password) {
-
     if (password.length < 6) {
       throw new Error("min password length is 6");
     }
