@@ -1,7 +1,7 @@
 require ("dotenv").config();
 const Sequelize = require('sequelize');
 
-module.exports = (env) => {
+module.exports = (env = process.env.Env) => {
 
   if (env === 'develop') {
 
